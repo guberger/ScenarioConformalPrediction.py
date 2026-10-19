@@ -1,0 +1,38 @@
+{
+  "rank": 18,
+  "n_cal": 200,
+  "n_test": 5000,
+  "runs": 100,
+  "horizons": [
+    2,
+    30,
+    50
+  ],
+  "seed": 20261019,
+  "quick": false,
+  "outdir": "results\\default",
+  "replot": false,
+  "support_bound": 3,
+  "beta_parameters": [
+    183,
+    18
+  ],
+  "alpha": 0.08955223880597014,
+  "alpha_intersection": 0.08955223880597016,
+  "schedules": [
+    [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    [
+      9,
+      9
+    ]
+  ],
+  "area": "deterministic vertical-slice quadrature",
+  "reference": "hat: coverage CDF upper bound; check/bar: exact under paper assumptions"
+}
