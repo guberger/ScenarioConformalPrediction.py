@@ -3,6 +3,7 @@
 from itertools import combinations
 
 import matplotlib.pyplot as plt
+from matplotlib import _mathtext
 import numpy as np
 import pandas as pd
 from matplotlib.patches import Patch
@@ -10,6 +11,10 @@ from scipy.stats import beta
 
 from experiment_utils import mean_interval
 from methods import minimum_enclosing_disk
+
+# Mathtext knows the caron glyph but omits \check from its accent commands.
+# Register it so it uses the same size and placement rules as \hat and \bar.
+_mathtext.Parser._accent_map.setdefault("check", r"\check")
 
 plt.rcParams.update(
     {
@@ -47,7 +52,7 @@ def method_label(name):
     """Paper notation for the method identifiers stored in result tables."""
     return {
         "hat": r"$\hat\Gamma_{6}$",
-        "check": r"$\check\Gamma_{\alpha}$",
+        "check": r"$\check{\Gamma}_{\alpha}$",
         "bar_L6": r"$\bar\Gamma_{\mathbf{s},\alpha},\;\mathbf{s}=(3,3,3,3,3,3)$",
         "bar_L2": r"$\bar\Gamma_{\mathbf{s},\alpha},\;\mathbf{s}=(9,9)$",
     }.get(name, name)
